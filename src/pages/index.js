@@ -1,0 +1,16 @@
+export { default as Dashboard } from "./Dashboard";
+export { default as Orders } from "./Orders";
+export { default as Stock } from "./Stock";
+export { default as Customers } from "./Customers";
+export { default as Pangkalan } from "./Pangkalan";
+export { default as Delivery } from "./Delivery";
+export { default as Finance } from "./Finance";
+export { default as AnalyticsPage } from "./AnalyticsPage";
+export { default as HetCompliance } from "./HetCompliance";
+export { default as PaymentGateway } from "./PaymentGateway";
+export { default as Routes } from "./Routes";
+export { default as Reconciliation } from "./Reconciliation";
+export { default as SalesLeads } from "./SalesLeads";
+export { default as MarketMonitoring } from "./MarketMonitoring";
+export { default as CompliancePage } from "./CompliancePage";
+export { default as Consumers } from "./Consumers";
