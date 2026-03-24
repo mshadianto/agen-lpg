@@ -62,21 +62,21 @@ const PRODUCTS = [
 ];
 
 const CUSTOMERS = [
-  { id: 1, name: "Ibu Siti Aminah", phone: "0812-3456-7890", addr: "Jl. Merpati No. 12, RT 03/RW 05", type: "rumah_tangga", orders: 24 },
-  { id: 2, name: "Warung Makan Barokah", phone: "0857-1234-5678", addr: "Jl. Pahlawan No. 45", type: "usaha_mikro", orders: 48 },
-  { id: 3, name: "Bp. Ahmad Fauzi", phone: "0878-9012-3456", addr: "Jl. Kenanga No. 7, RT 01/RW 02", type: "rumah_tangga", orders: 12 },
-  { id: 4, name: "RM Padang Sederhana", phone: "0813-5678-9012", addr: "Jl. Sudirman No. 88", type: "usaha_mikro", orders: 96 },
-  { id: 5, name: "Ibu Dewi Lestari", phone: "0856-7890-1234", addr: "Jl. Anggrek No. 3, RT 05/RW 01", type: "rumah_tangga", orders: 36 },
-  { id: 6, name: "Katering Berkah", phone: "0821-4455-6677", addr: "Jl. Dahlia No. 18", type: "usaha_mikro", orders: 72 },
+  { id: 1, name: "Ibu Siti Aminah", phone: "0812-3456-7890", addr: "Jl. P. Antasari No. 12, RT 03/RW 05, Samarinda Ulu", type: "rumah_tangga", orders: 24 },
+  { id: 2, name: "Warung Makan Barokah", phone: "0857-1234-5678", addr: "Jl. KH. Agus Salim No. 45, Samarinda Ilir", type: "usaha_mikro", orders: 48 },
+  { id: 3, name: "Bp. Ahmad Fauzi", phone: "0878-9012-3456", addr: "Jl. Lambung Mangkurat No. 7, RT 01/RW 02, Sungai Pinang", type: "rumah_tangga", orders: 12 },
+  { id: 4, name: "RM Padang Sederhana", phone: "0813-5678-9012", addr: "Jl. Juanda No. 88, Samarinda Kota", type: "usaha_mikro", orders: 96 },
+  { id: 5, name: "Ibu Dewi Lestari", phone: "0856-7890-1234", addr: "Jl. Mugirejo No. 3, RT 05/RW 01, Samarinda Utara", type: "rumah_tangga", orders: 36 },
+  { id: 6, name: "Katering Berkah Kaltim", phone: "0821-4455-6677", addr: "Jl. Untung Suropati No. 18, Sempaja Utara", type: "usaha_mikro", orders: 72 },
 ];
 
 const PANGKALAN_DATA = [
-  { id: 1, name: "Pangkalan Hj. Rina", owner: "Hj. Rina Marlina", phone: "0812-8800-1122", addr: "Jl. Raya Cibubur No. 15", kel: "Cibubur", kec: "Ciracas", status: "active", rating: 4.8, join: "2022-03-15", qm: 200, qu: 156, s3: 45, s5: 8, s12: 3, td: 1840, ld: "2026-03-22T10:30:00" },
-  { id: 2, name: "Pangkalan Pak Darmawan", owner: "Darmawan Susilo", phone: "0857-7766-3344", addr: "Jl. Mawar No. 33, RT 02/RW 08", kel: "Cipayung", kec: "Cipayung", status: "active", rating: 4.5, join: "2021-08-10", qm: 150, qu: 132, s3: 22, s5: 5, s12: 0, td: 2350, ld: "2026-03-21T14:00:00" },
-  { id: 3, name: "Pangkalan Bu Sari", owner: "Sari Wulandari", phone: "0878-5544-6677", addr: "Jl. Flamboyan No. 8, Pondok Ranggon", kel: "Pondok Ranggon", kec: "Cipayung", status: "active", rating: 4.9, join: "2020-11-20", qm: 250, qu: 210, s3: 68, s5: 12, s12: 5, td: 4120, ld: "2026-03-23T08:15:00" },
-  { id: 4, name: "Pangkalan Mitra Gas", owner: "H. Bambang Prayitno", phone: "0813-1122-9988", addr: "Jl. Raya Bogor Km 28, Pekayon", kel: "Pekayon", kec: "Pasar Rebo", status: "active", rating: 4.2, join: "2023-01-05", qm: 180, qu: 98, s3: 15, s5: 2, s12: 1, td: 890, ld: "2026-03-20T16:45:00" },
-  { id: 5, name: "Pangkalan Berkah Jaya", owner: "Yusuf Hakim", phone: "0856-3322-7788", addr: "Jl. Nangka No. 12, Cilangkap", kel: "Cilangkap", kec: "Cipayung", status: "suspended", rating: 3.5, join: "2023-06-18", qm: 100, qu: 0, s3: 0, s5: 0, s12: 0, td: 420, ld: "2026-02-10T09:00:00" },
-  { id: 6, name: "Pangkalan Sejahtera", owner: "Ibu Nurhayati", phone: "0817-6655-4433", addr: "Jl. Rambutan No. 5, Ceger", kel: "Ceger", kec: "Cipayung", status: "active", rating: 4.6, join: "2021-04-12", qm: 175, qu: 145, s3: 38, s5: 6, s12: 2, td: 2980, ld: "2026-03-23T11:00:00" },
+  { id: 1, name: "Pangkalan Hj. Rina", owner: "Hj. Rina Marlina", phone: "0812-8800-1122", addr: "Jl. P. Antasari No. 15, Kel. Sidodadi", kel: "Sidodadi", kec: "Samarinda Ulu", status: "active", rating: 4.8, join: "2022-03-15", qm: 200, qu: 156, s3: 45, s5: 8, s12: 3, td: 1840, ld: "2026-03-22T10:30:00" },
+  { id: 2, name: "Pangkalan Pak Darmawan", owner: "Darmawan Susilo", phone: "0857-7766-3344", addr: "Jl. Setosa No. 33, RT 45, Kel. Air Putih", kel: "Air Putih", kec: "Samarinda Ulu", status: "active", rating: 4.5, join: "2021-08-10", qm: 150, qu: 132, s3: 22, s5: 5, s12: 0, td: 2350, ld: "2026-03-21T14:00:00" },
+  { id: 3, name: "Pangkalan Bu Sari", owner: "Sari Wulandari", phone: "0878-5544-6677", addr: "Jl. Mugirejo No. 8, Kel. Sempaja Selatan", kel: "Sempaja Selatan", kec: "Samarinda Utara", status: "active", rating: 4.9, join: "2020-11-20", qm: 250, qu: 210, s3: 68, s5: 12, s12: 5, td: 4120, ld: "2026-03-23T08:15:00" },
+  { id: 4, name: "Pangkalan Mitra Gas", owner: "H. Bambang Prayitno", phone: "0813-1122-9988", addr: "Jl. KH. Wahid Hasyim No. 28, Kel. Sungai Pinang Dalam", kel: "Sungai Pinang Dalam", kec: "Sungai Pinang", status: "active", rating: 4.2, join: "2023-01-05", qm: 180, qu: 98, s3: 15, s5: 2, s12: 1, td: 890, ld: "2026-03-20T16:45:00" },
+  { id: 5, name: "Pangkalan Berkah Jaya", owner: "Yusuf Hakim", phone: "0856-3322-7788", addr: "Jl. Rapak Indah No. 12, Kel. Gunung Kelua", kel: "Gunung Kelua", kec: "Samarinda Ulu", status: "suspended", rating: 3.5, join: "2023-06-18", qm: 100, qu: 0, s3: 0, s5: 0, s12: 0, td: 420, ld: "2026-02-10T09:00:00" },
+  { id: 6, name: "Pangkalan Sejahtera", owner: "Ibu Nurhayati", phone: "0817-6655-4433", addr: "Jl. Palang Merah No. 5, Kel. Pelita", kel: "Pelita", kec: "Samarinda Ilir", status: "active", rating: 4.6, join: "2021-04-12", qm: 175, qu: 145, s3: 38, s5: 6, s12: 2, td: 2980, ld: "2026-03-23T11:00:00" },
 ];
 
 const STATUS = { pending: { l: "Menunggu", c: "#f59e0b", bg: "#fef3c7" }, confirmed: { l: "Dikonfirmasi", c: "#3b82f6", bg: "#dbeafe" }, delivered: { l: "Terkirim", c: "#10b981", bg: "#d1fae5" }, cancelled: { l: "Dibatalkan", c: "#ef4444", bg: "#fee2e2" } };
@@ -112,10 +112,10 @@ const ROLES = {
 };
 
 const DRIVER_ROUTES = [
-  { id: 1, name: "Rute Cibubur-Ciracas", stops: ["Pangkalan Hj. Rina", "Toko Maju Jaya", "RM Padang Sederhana"], dist: 12.5, est: "45 min", status: "active", driver: "Pak Joko", vehicle: "B 1234 CD", loaded: 85, empty: 12 },
-  { id: 2, name: "Rute Cipayung Loop", stops: ["Pangkalan Pak Darmawan", "Pangkalan Bu Sari", "Pangkalan Sejahtera"], dist: 8.3, est: "30 min", status: "active", driver: "Pak Rudi", vehicle: "B 5678 EF", loaded: 62, empty: 8 },
-  { id: 3, name: "Rute Pasar Rebo", stops: ["Pangkalan Mitra Gas", "Warung Makan Barokah", "Katering Berkah"], dist: 15.1, est: "55 min", status: "pending", driver: "Pak Anto", vehicle: "B 9012 GH", loaded: 48, empty: 0 },
-  { id: 4, name: "Rute Cilangkap", stops: ["Pangkalan Berkah Jaya", "Ibu Siti Aminah", "Bp. Ahmad Fauzi"], dist: 6.8, est: "25 min", status: "completed", driver: "Pak Joko", vehicle: "B 1234 CD", loaded: 0, empty: 22 },
+  { id: 1, name: "Rute Samarinda Ulu", stops: ["Pangkalan Hj. Rina", "Pangkalan Pak Darmawan", "RM Padang Sederhana"], dist: 8.5, est: "35 min", status: "active", driver: "Pak Joko", vehicle: "KT 1234 AB", loaded: 85, empty: 12 },
+  { id: 2, name: "Rute Samarinda Utara-Sempaja", stops: ["Pangkalan Bu Sari", "Warung Makan Barokah", "Katering Berkah Kaltim"], dist: 11.3, est: "40 min", status: "active", driver: "Pak Rudi", vehicle: "KT 5678 CD", loaded: 62, empty: 8 },
+  { id: 3, name: "Rute Sungai Pinang-Ilir", stops: ["Pangkalan Mitra Gas", "Pangkalan Sejahtera", "Ibu Siti Aminah"], dist: 9.1, est: "30 min", status: "pending", driver: "Pak Anto", vehicle: "KT 9012 EF", loaded: 48, empty: 0 },
+  { id: 4, name: "Rute Samarinda Seberang", stops: ["Pangkalan Berkah Jaya", "Bp. Ahmad Fauzi", "Ibu Dewi Lestari"], dist: 14.8, est: "50 min", status: "completed", driver: "Pak Joko", vehicle: "KT 1234 AB", loaded: 0, empty: 22 },
 ];
 
 const RECONCILIATION = [
@@ -127,47 +127,50 @@ const RECONCILIATION = [
 ];
 
 const SALES_LEADS = [
-  { id: 1, name: "Warung Nasi Ibu Yuli", type: "usaha_mikro", addr: "Jl. Mangga No. 7, Cibubur", phone: "0812-9988-7766", status: "hot", notes: "Butuh 10 tabung 3kg/minggu, siap gabung", lastContact: "2026-03-24" },
-  { id: 2, name: "Perumahan Green Valley", type: "komplek", addr: "Jl. Raya Bogor Km 32", phone: "0857-6655-4433", status: "warm", notes: "200+ unit, potensial pangkalan baru", lastContact: "2026-03-22" },
-  { id: 3, name: "Catering Sehat Sentosa", type: "usaha_mikro", addr: "Jl. Kenari No. 15, Cipayung", phone: "0878-3344-5566", status: "hot", notes: "Butuh 12kg reguler, 20 tabung/bulan", lastContact: "2026-03-25" },
-  { id: 4, name: "RT 05/RW 12 Pekayon", type: "komplek", addr: "Kel. Pekayon, Pasar Rebo", phone: "0813-2233-4455", status: "cold", notes: "Survey area, belum ada pangkalan terdekat", lastContact: "2026-03-18" },
-  { id: 5, name: "Restoran Sunda Rasa", type: "usaha_mikro", addr: "Jl. Raya Cibubur No. 88", phone: "0856-7788-9900", status: "warm", notes: "Pakai 50kg, potensi kontrak bulanan", lastContact: "2026-03-20" },
+  { id: 1, name: "Warung Nasi Ibu Yuli", type: "usaha_mikro", addr: "Jl. Lambung Mangkurat No. 7, Samarinda Kota", phone: "0812-9988-7766", status: "hot", notes: "Butuh 10 tabung 3kg/minggu, siap gabung", lastContact: "2026-03-24" },
+  { id: 2, name: "Perumahan Grand Sempaja", type: "komplek", addr: "Jl. Mugirejo, Sempaja Utara", phone: "0857-6655-4433", status: "warm", notes: "300+ unit rumah, potensial pangkalan baru", lastContact: "2026-03-22" },
+  { id: 3, name: "Catering Sehat Sentosa", type: "usaha_mikro", addr: "Jl. MT Haryono No. 15, Samarinda Ilir", phone: "0878-3344-5566", status: "hot", notes: "Butuh 12kg reguler, 20 tabung/bulan", lastContact: "2026-03-25" },
+  { id: 4, name: "RT 05/RW 12 Loa Bakung", type: "komplek", addr: "Kel. Loa Bakung, Sungai Kunjang", phone: "0813-2233-4455", status: "cold", notes: "Survey area perbatasan kota, belum ada pangkalan terdekat", lastContact: "2026-03-18" },
+  { id: 5, name: "Rumah Makan Patin Bakar", type: "usaha_mikro", addr: "Jl. Gajah Mada No. 88, Samarinda Kota", phone: "0856-7788-9900", status: "warm", notes: "Pakai 50kg, potensi kontrak bulanan", lastContact: "2026-03-20" },
 ];
 
 const CONSUMERS = [
-  { id: 1, nik: "3201****0001", name: "Siti Nurhaliza", addr: "RT 03/RW 05, Cibubur", phone: "0812-1111-2222", type: "subsidi", purchases: 8, lastPurchase: "2026-03-24" },
-  { id: 2, nik: "3201****0002", name: "Ahmad Hidayat", addr: "RT 01/RW 02, Cipayung", phone: "0857-3333-4444", type: "subsidi", purchases: 12, lastPurchase: "2026-03-23" },
-  { id: 3, nik: "3201****0003", name: "Dewi Sartika", addr: "RT 05/RW 01, Pondok Ranggon", phone: "0878-5555-6666", type: "subsidi", purchases: 6, lastPurchase: "2026-03-25" },
-  { id: 4, nik: "3201****0004", name: "Budi Santoso", addr: "RT 02/RW 08, Pekayon", phone: "0813-7777-8888", type: "subsidi", purchases: 15, lastPurchase: "2026-03-22" },
-  { id: 5, nik: "3201****0005", name: "Ratna Sari", addr: "RT 04/RW 03, Cilangkap", phone: "0856-9999-0000", type: "nonsubsidi", purchases: 3, lastPurchase: "2026-03-20" },
+  { id: 1, nik: "6472****0001", name: "Siti Nurhaliza", addr: "RT 03/RW 05, Kel. Sidodadi, Samarinda Ulu", phone: "0812-1111-2222", type: "subsidi", purchases: 8, lastPurchase: "2026-03-24" },
+  { id: 2, nik: "6472****0002", name: "Ahmad Hidayat", addr: "RT 01/RW 02, Kel. Air Putih, Samarinda Ulu", phone: "0857-3333-4444", type: "subsidi", purchases: 12, lastPurchase: "2026-03-23" },
+  { id: 3, nik: "6472****0003", name: "Dewi Sartika", addr: "RT 05/RW 01, Kel. Sempaja Selatan, Samarinda Utara", phone: "0878-5555-6666", type: "subsidi", purchases: 6, lastPurchase: "2026-03-25" },
+  { id: 4, nik: "6472****0004", name: "Budi Santoso", addr: "RT 02/RW 08, Kel. Sungai Pinang Dalam", phone: "0813-7777-8888", type: "subsidi", purchases: 15, lastPurchase: "2026-03-22" },
+  { id: 5, nik: "6472****0005", name: "Ratna Sari", addr: "RT 04/RW 03, Kel. Gunung Kelua, Samarinda Ulu", phone: "0856-9999-0000", type: "nonsubsidi", purchases: 3, lastPurchase: "2026-03-20" },
 ];
 
 const COMPLIANCE_ITEMS = [
   { id: 1, name: "Izin SPPBE/SPBE", status: "active", expiry: "2027-06-15", doc: "SPBE-2024-001", risk: "low" },
   { id: 2, name: "Sertifikat APAR & K3", status: "active", expiry: "2026-08-20", doc: "K3-2025-012", risk: "medium" },
-  { id: 3, name: "Laporan Distribusi Subsidi (Bulanan)", status: "overdue", expiry: "2026-03-15", doc: "-", risk: "high" },
-  { id: 4, name: "Audit Tabung Berkala", status: "active", expiry: "2026-12-01", doc: "AUD-2025-Q4", risk: "low" },
-  { id: 5, name: "Pajak & Retribusi Daerah", status: "active", expiry: "2026-04-30", doc: "NPWP-****1234", risk: "medium" },
+  { id: 3, name: "Laporan Distribusi Subsidi (Bulanan)", status: "overdue", expiry: "2026-03-15", doc: "Monica LPG", risk: "high" },
+  { id: 4, name: "Audit Tabung Berkala Pertamina", status: "active", expiry: "2026-12-01", doc: "AUD-2025-Q4", risk: "low" },
+  { id: 5, name: "Pajak & Retribusi Daerah Kaltim", status: "active", expiry: "2026-04-30", doc: "NPWP-****1234", risk: "medium" },
   { id: 6, name: "Perjanjian Pangkalan (MoU)", status: "expiring", expiry: "2026-04-10", doc: "MOU-PK-006", risk: "high" },
+  { id: 7, name: "Verifikasi Penerima Subsidi (Ditjen Migas)", status: "active", expiry: "2026-06-30", doc: "B-570/MG.05/DJM/2025", risk: "high" },
+  { id: 8, name: "Update Koordinat Pangkalan via Monica LPG", status: "active", expiry: "2026-05-01", doc: "Visit Agen", risk: "medium" },
 ];
 
 // ─── HET (Harga Eceran Tertinggi) REGULATION ───
 const HET_CONFIG = {
-  region: "DKI Jakarta & Sekitarnya",
-  authority: "Pergub DKI / Perbup Bogor / Perwal Bekasi",
+  region: "Kota Samarinda, Kalimantan Timur",
+  authority: "Perwal Samarinda / Pergub Kaltim / Kepmen ESDM",
   lastUpdated: "2026-01-15",
+  regulation: "Surat Ditjen Migas No. B-570/MG.05/DJM/2025 — Distribusi hanya ke pengguna langsung",
   rates: [
-    { productId: 1, name: "LPG 3 kg (Subsidi)", het: 18000, note: "Sesuai Kepmen ESDM No. 62/2023, HET tabung 3 kg bersubsidi" },
-    { productId: 2, name: "LPG 5.5 kg (Bright Gas)", het: 72600, note: "Non-subsidi, HET Perda DKI Jakarta referensi Pertamina" },
-    { productId: 3, name: "LPG 12 kg", het: 162800, note: "Non-subsidi, acuan harga Pertamina per Jan 2026" },
-    { productId: 4, name: "LPG 50 kg", het: 598400, note: "Harga industri, referensi Pertamina per Jan 2026" },
+    { productId: 1, name: "LPG 3 kg (Subsidi)", het: 18000, note: "HET subsidi nasional Kepmen ESDM — wajib dijual langsung ke RT miskin/usaha mikro/petani/nelayan (Ditjen Migas 2025)" },
+    { productId: 2, name: "LPG 5.5 kg (Bright Gas)", het: 72600, note: "Non-subsidi, referensi harga Pertamina Patra Niaga Regional Kalimantan" },
+    { productId: 3, name: "LPG 12 kg", het: 162800, note: "Non-subsidi, acuan Pertamina Regional Kalimantan per Jan 2026" },
+    { productId: 4, name: "LPG 50 kg", het: 598400, note: "Harga industri, referensi Pertamina per Jan 2026 wilayah Kalimantan" },
   ]
 };
 
 const INITIAL_HET_LOG = [
-  { id: 1, date: "2026-03-10T08:30:00", actor: "Pangkalan Mitra Gas", actorRole: "pangkalan", productId: 1, productName: "LPG 3 kg (Melon)", priceSold: 20000, het: 18000, diff: 2000, pctOver: 11.1, action: "flagged", resolvedBy: null, resolvedAt: null, notes: "Harga jual melebihi HET subsidi" },
-  { id: 2, date: "2026-03-15T14:20:00", actor: "Pangkalan Pak Darmawan", actorRole: "pangkalan", productId: 1, productName: "LPG 3 kg (Melon)", priceSold: 19000, het: 18000, diff: 1000, pctOver: 5.6, action: "resolved", resolvedBy: "Admin Owner", resolvedAt: "2026-03-16T09:00:00", notes: "Pangkalan telah menyesuaikan harga" },
-  { id: 3, date: "2026-03-20T11:45:00", actor: "Admin Agen", actorRole: "admin", productId: 3, productName: "LPG 12 kg", priceSold: 165000, het: 162800, diff: 2200, pctOver: 1.4, action: "flagged", resolvedBy: null, resolvedAt: null, notes: "Input harga baru melebihi HET referensi" },
+  { id: 1, date: "2026-03-10T08:30:00", actor: "Pangkalan Mitra Gas", actorRole: "pangkalan", productId: 1, productName: "LPG 3 kg (Melon)", priceSold: 20000, het: 18000, diff: 2000, pctOver: 11.1, action: "flagged", resolvedBy: null, resolvedAt: null, notes: "Harga jual melebihi HET subsidi — pelanggaran Ditjen Migas" },
+  { id: 2, date: "2026-03-15T14:20:00", actor: "Pangkalan Pak Darmawan", actorRole: "pangkalan", productId: 1, productName: "LPG 3 kg (Melon)", priceSold: 19000, het: 18000, diff: 1000, pctOver: 5.6, action: "resolved", resolvedBy: "Admin Owner", resolvedAt: "2026-03-16T09:00:00", notes: "Pangkalan telah menyesuaikan harga sesuai HET Samarinda" },
+  { id: 3, date: "2026-03-20T11:45:00", actor: "Admin Agen", actorRole: "admin", productId: 3, productName: "LPG 12 kg", priceSold: 165000, het: 162800, diff: 2200, pctOver: 1.4, action: "flagged", resolvedBy: null, resolvedAt: null, notes: "Input harga baru melebihi HET referensi Pertamina Regional Kalimantan" },
 ];
 
 // ─── PAYMENT GATEWAY ───
@@ -1126,7 +1129,7 @@ export default function AgenLPG() {
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)", zIndex: 50, display: "flex", justifyContent: "center", alignItems: "center", padding: 20, animation: "fadeIn .2s" }} onClick={() => setPage("dashboard")}>
           <div style={{ background: "var(--card)", borderRadius: 20, padding: 28, width: "100%", maxWidth: 800, maxHeight: "90vh", overflowY: "auto", border: "1px solid var(--border)", animation: "slideUp .3s" }} onClick={e => e.stopPropagation()}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}><h3 style={{ fontSize: 18, fontWeight: 800 }}>Data Konsumen Akhir (Subsidi)</h3><button onClick={() => setPage("dashboard")} style={{ background: "var(--hover)", border: "none", borderRadius: 8, padding: 6, cursor: "pointer", color: "var(--text-dim)", display: "flex" }}><Ic name="x" size={18}/></button></div>
-            <p style={{ fontSize: 12, color: "var(--text-dim)", marginBottom: 16 }}>Pendataan penerima LPG 3 kg bersubsidi sesuai regulasi BPH Migas</p>
+            <p style={{ fontSize: 12, color: "var(--text-dim)", marginBottom: 16 }}>Pendataan penerima LPG 3 kg bersubsidi — wajib pengguna langsung sesuai Surat Ditjen Migas No. B-570/MG.05/DJM/2025. Pangkalan Samarinda tidak boleh menyalurkan ke pengecer.</p>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse" }}><thead><tr>{["NIK","Nama","Alamat","Telepon","Tipe","Pembelian","Terakhir"].map(h => <th key={h} style={{ textAlign: "left", padding: "10px 14px", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".06em", color: "var(--text-dim)", background: "var(--card2)", borderBottom: "1px solid var(--border)" }}>{h}</th>)}</tr></thead>
                 <tbody>{consumers.map(c => <tr key={c.id} style={{ borderBottom: "1px solid var(--border)" }}>
@@ -1271,6 +1274,7 @@ export default function AgenLPG() {
                 <div><h3 style={{ fontSize: 20, fontWeight: 800, letterSpacing: "-0.03em" }}>HET Compliance Check</h3>
                   <p style={{ fontSize: 12, color: "var(--text-dim)", marginTop: 2 }}>Monitoring Harga Eceran Tertinggi — {HET_CONFIG.region}</p>
                   <div style={{ fontSize: 10, color: "var(--text-dim)", marginTop: 2 }}>Dasar: {HET_CONFIG.authority} • Terakhir diperbarui: {fmtDate(HET_CONFIG.lastUpdated)}</div>
+                  <div style={{ fontSize: 10, color: "#ef4444", fontWeight: 600, marginTop: 4 }}>{HET_CONFIG.regulation}</div>
                 </div>
               </div>
               <button onClick={() => setPage("dashboard")} style={{ background: "var(--hover)", border: "none", borderRadius: 8, padding: 6, cursor: "pointer", color: "var(--text-dim)", display: "flex" }}><Ic name="x" size={18}/></button>

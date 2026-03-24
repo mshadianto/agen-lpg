@@ -1,8 +1,8 @@
 export const DRIVER_ROUTES = [
-  { id: 1, name: "Rute Cibubur-Ciracas", stops: ["Pangkalan Hj. Rina", "Toko Maju Jaya", "RM Padang Sederhana"], dist: 12.5, est: "45 min", status: "active", driver: "Pak Joko", vehicle: "B 1234 CD", loaded: 85, empty: 12 },
-  { id: 2, name: "Rute Cipayung Loop", stops: ["Pangkalan Pak Darmawan", "Pangkalan Bu Sari", "Pangkalan Sejahtera"], dist: 8.3, est: "30 min", status: "active", driver: "Pak Rudi", vehicle: "B 5678 EF", loaded: 62, empty: 8 },
-  { id: 3, name: "Rute Pasar Rebo", stops: ["Pangkalan Mitra Gas", "Warung Makan Barokah", "Katering Berkah"], dist: 15.1, est: "55 min", status: "pending", driver: "Pak Anto", vehicle: "B 9012 GH", loaded: 48, empty: 0 },
-  { id: 4, name: "Rute Cilangkap", stops: ["Pangkalan Berkah Jaya", "Ibu Siti Aminah", "Bp. Ahmad Fauzi"], dist: 6.8, est: "25 min", status: "completed", driver: "Pak Joko", vehicle: "B 1234 CD", loaded: 0, empty: 22 },
+  { id: 1, name: "Rute Samarinda Ulu", stops: ["Pangkalan Hj. Rina", "Pangkalan Pak Darmawan", "RM Padang Sederhana"], dist: 8.5, est: "35 min", status: "active", driver: "Pak Joko", vehicle: "KT 1234 AB", loaded: 85, empty: 12 },
+  { id: 2, name: "Rute Samarinda Utara-Sempaja", stops: ["Pangkalan Bu Sari", "Warung Makan Barokah", "Katering Berkah Kaltim"], dist: 11.3, est: "40 min", status: "active", driver: "Pak Rudi", vehicle: "KT 5678 CD", loaded: 62, empty: 8 },
+  { id: 3, name: "Rute Sungai Pinang-Ilir", stops: ["Pangkalan Mitra Gas", "Pangkalan Sejahtera", "Ibu Siti Aminah"], dist: 9.1, est: "30 min", status: "pending", driver: "Pak Anto", vehicle: "KT 9012 EF", loaded: 48, empty: 0 },
+  { id: 4, name: "Rute Samarinda Seberang", stops: ["Pangkalan Berkah Jaya", "Bp. Ahmad Fauzi", "Ibu Dewi Lestari"], dist: 14.8, est: "50 min", status: "completed", driver: "Pak Joko", vehicle: "KT 1234 AB", loaded: 0, empty: 22 },
 ];
 
 export const RECONCILIATION = [
