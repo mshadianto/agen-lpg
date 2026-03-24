@@ -333,6 +333,7 @@ export default function useAppState() {
       { id: "finance", l: "Keuangan", ic: "wallet", r: ["owner"] },
       { id: "payment", l: "Payment Gateway", ic: "cc", r: ["pangkalan", "owner"] },
       { id: "compliancePage", l: "Kepatuhan", ic: "layers", r: ["owner"] },
+      { id: "integration", l: "Integrasi Pertamina", ic: "link", r: ["pangkalan", "owner"] },
       { id: "analytics", l: "Analytics AI", ic: "brain", r: ["owner", "sales"] },
     ];
     return role ? all.filter((n) => n.r.includes(role)) : all;

@@ -4,7 +4,7 @@ import { fmtDate } from "../utils/format";
 export default function Consumers({ consumers, onClose }) {
   return (
     <PageOverlay onClose={onClose} title="Data Konsumen Akhir (Subsidi)" maxWidth={800}>
-      <p style={{ fontSize: 12, color: "var(--text-dim)", marginBottom: 16 }}>Pendataan penerima LPG 3 kg bersubsidi sesuai regulasi BPH Migas</p>
+      <p style={{ fontSize: 12, color: "var(--text-dim)", marginBottom: 16 }}>Pendataan penerima LPG 3 kg bersubsidi — wajib pengguna langsung sesuai Surat Ditjen Migas No. B-570/MG.05/DJM/2025. Pangkalan Samarinda tidak boleh menyalurkan ke pengecer.</p>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>

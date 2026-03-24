@@ -29,6 +29,7 @@ import Reconciliation from "./pages/Reconciliation";
 import SalesLeads from "./pages/SalesLeads";
 import MarketMonitoring from "./pages/MarketMonitoring";
 import CompliancePage from "./pages/CompliancePage";
+import Integration from "./pages/Integration";
 import Consumers from "./pages/Consumers";
 
 export default function App() {
@@ -164,6 +165,14 @@ export default function App() {
           {state.page === "salesLeads" && <SalesLeads leads={state.leads} onClose={goBack} />}
           {state.page === "market" && <MarketMonitoring pangkalan={state.pangkalan} activePk={state.activePk} leads={state.leads} onClose={goBack} />}
           {state.page === "compliancePage" && <CompliancePage compliance={state.compliance} onClose={goBack} />}
+          {state.page === "integration" && (
+            <Integration
+              pangkalan={state.pangkalan} activePk={state.activePk}
+              consumers={state.consumers} orders={state.orders}
+              products={state.products} dist={state.dist}
+              payments={state.payments} toast_={state.toast_} onClose={goBack}
+            />
+          )}
           {state.page === "het" && (
             <HetCompliance
               hetChecks={analytics.hetChecks} hetViolations={analytics.hetViolations}
