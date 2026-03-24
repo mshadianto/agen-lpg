@@ -3,375 +3,55 @@ import { Badge } from "../components/ui";
 import { STATUS } from "../constants/status";
 import { fmtRp, fmtDate } from "../utils/format";
 
-export default function Orders({
-  filteredOrders,
-  orders,
-  orderFilter,
-  setOrderFilter,
-  setModal,
-  exportCSV,
-  upOrd,
-  search,
-}) {
-  const statusCounts = Object.fromEntries(
-    Object.keys(STATUS).map((key) => [
-      key,
-      orders.filter((o) => o.status === key).length,
-    ])
-  );
-
+export default function Orders({ filteredOrders, orders, orderFilter, setOrderFilter, setModal, exportCSV, upOrd }) {
   return (
     <div style={{ animation: "fadeIn .3s" }}>
-      {/* Header */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: 20,
-          flexWrap: "wrap",
-          gap: 10,
-        }}
-      >
-        <h2 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>
-          Daftar Pesanan
-        </h2>
-        <div style={{ display: "flex", gap: 10 }}>
-          <button
-            onClick={exportCSV}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 6,
-              padding: "8px 14px",
-              borderRadius: 8,
-              border: "1px solid var(--border)",
-              background: "var(--card)",
-              cursor: "pointer",
-              fontWeight: 600,
-              fontSize: 14,
-            }}
-          >
-            <Ic name="download" size={16} />
-            Export
-          </button>
-          <button
-            onClick={() => setModal({ type: "addOrder" })}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 6,
-              padding: "8px 14px",
-              borderRadius: 8,
-              border: "none",
-              background: "var(--accent, #6366f1)",
-              color: "#fff",
-              cursor: "pointer",
-              fontWeight: 600,
-              fontSize: 14,
-            }}
-          >
-            <Ic name="plus" size={16} />
-            Pesanan Baru
-          </button>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, flexWrap: "wrap", gap: 12 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 800, letterSpacing: "-0.03em" }}>Daftar Pesanan</h2>
+        <div style={{ display: "flex", gap: 8 }}>
+          <button onClick={exportCSV} style={{ background: "var(--hover)", border: "1px solid var(--border)", borderRadius: 10, padding: "8px 16px", fontSize: 12, fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, color: "var(--text-dim)", fontFamily: "inherit" }}><Ic name="download" size={14} /> Export</button>
+          <button onClick={() => setModal({ t: "addOrder" })} style={{ background: "linear-gradient(135deg,#f97316,#ea580c)", color: "#fff", border: "none", borderRadius: 10, padding: "8px 16px", fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", display: "flex", alignItems: "center", gap: 6 }}><Ic name="plus" size={14} /> Pesanan Baru</button>
         </div>
       </div>
-
       {/* Filter Pills */}
-      <div
-        style={{
-          display: "flex",
-          gap: 8,
-          marginBottom: 18,
-          flexWrap: "wrap",
-        }}
-      >
-        {/* "Semua" pill */}
-        <button
-          onClick={() => setOrderFilter("all")}
-          style={{
-            padding: "6px 14px",
-            borderRadius: 20,
-            border:
-              orderFilter === "all"
-                ? "2px solid var(--accent, #6366f1)"
-                : "1px solid var(--border)",
-            background:
-              orderFilter === "all"
-                ? "var(--accent-bg, rgba(99,102,241,0.1))"
-                : "var(--card)",
-            cursor: "pointer",
-            fontWeight: orderFilter === "all" ? 700 : 500,
-            fontSize: 13,
-            transition: "all .15s",
-          }}
-        >
-          Semua{" "}
-          <span style={{ opacity: 0.6, fontSize: 12 }}>({orders.length})</span>
-        </button>
-
-        {/* Status pills */}
-        {Object.entries(STATUS).map(([key, val]) => (
-          <button
-            key={key}
-            onClick={() => setOrderFilter(key)}
-            style={{
-              padding: "6px 14px",
-              borderRadius: 20,
-              border:
-                orderFilter === key
-                  ? "2px solid var(--accent, #6366f1)"
-                  : "1px solid var(--border)",
-              background:
-                orderFilter === key
-                  ? "var(--accent-bg, rgba(99,102,241,0.1))"
-                  : "var(--card)",
-              cursor: "pointer",
-              fontWeight: orderFilter === key ? 700 : 500,
-              fontSize: 13,
-              transition: "all .15s",
-            }}
-          >
-            {val.label ?? val}{" "}
-            <span style={{ opacity: 0.6, fontSize: 12 }}>
-              ({statusCounts[key] ?? 0})
-            </span>
+      <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap" }}>
+        {[{ k: "all", l: "Semua" }, ...Object.entries(STATUS).map(([k, v]) => ({ k, l: v.l }))].map(f => (
+          <button key={f.k} onClick={() => setOrderFilter(f.k)} style={{ padding: "6px 14px", borderRadius: 8, fontSize: 12, fontWeight: 600, border: "1px solid", borderColor: orderFilter === f.k ? "var(--accent)" : "var(--border)", background: orderFilter === f.k ? "var(--accent)15" : "var(--card)", color: orderFilter === f.k ? "var(--accent)" : "var(--text-dim)", cursor: "pointer", fontFamily: "inherit", transition: "all 0.2s" }}>
+            {f.l} {f.k !== "all" && <span className="mono" style={{ marginLeft: 4, fontSize: 10 }}>({orders.filter(o => o.status === f.k).length})</span>}
           </button>
         ))}
       </div>
-
-      {/* Table Card */}
-      <div
-        style={{
-          background: "var(--card)",
-          border: "1px solid var(--border)",
-          borderRadius: 12,
-          overflow: "auto",
-        }}
-      >
-        <table
-          style={{
-            width: "100%",
-            borderCollapse: "collapse",
-            fontSize: 14,
-          }}
-        >
-          <thead>
-            <tr
-              style={{
-                borderBottom: "1px solid var(--border)",
-                background: "var(--table-head, rgba(0,0,0,0.03))",
-              }}
-            >
-              {[
-                "#",
-                "Tanggal",
-                "Pelanggan",
-                "Produk",
-                "Qty",
-                "Total",
-                "Profit",
-                "Status",
-                "Aksi",
-              ].map((col) => (
-                <th
-                  key={col}
-                  style={{
-                    padding: "10px 14px",
-                    textAlign: "left",
-                    fontSize: 11,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.06em",
-                    whiteSpace: "nowrap",
-                    opacity: 0.6,
-                  }}
-                >
-                  {col}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {filteredOrders.length === 0 ? (
-              <tr>
-                <td
-                  colSpan={9}
-                  style={{
-                    padding: "40px 14px",
-                    textAlign: "center",
-                    opacity: 0.4,
-                  }}
-                >
-                  Tidak ada pesanan ditemukan.
+      <div style={{ background: "var(--card)", borderRadius: 16, border: "1px solid var(--border)", overflow: "hidden" }}>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <thead><tr>{["#", "Tanggal", "Pelanggan", "Produk", "Qty", "Total", "Profit", "Status", "Aksi"].map(h => <th key={h} style={{ textAlign: "left", padding: "10px 18px", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--text-dim)", background: "var(--card2)", borderBottom: "1px solid var(--border)" }}>{h}</th>)}</tr></thead>
+            <tbody>{filteredOrders.map(o => (
+              <tr key={o.id} style={{ borderBottom: "1px solid var(--border)" }}>
+                <td className="mono" style={{ padding: "12px 18px", fontSize: 12, color: "var(--text-dim)" }}>#{o.id}</td>
+                <td style={{ padding: "12px 18px", fontSize: 12 }}>{fmtDate(o.date)}</td>
+                <td style={{ padding: "12px 18px", fontSize: 13, fontWeight: 600 }}>{o.cname}</td>
+                <td style={{ padding: "12px 18px", fontSize: 12 }}>{o.pname}</td>
+                <td className="mono" style={{ padding: "12px 18px", fontSize: 13, fontWeight: 500 }}>{o.qty}</td>
+                <td className="mono" style={{ padding: "12px 18px", fontSize: 13, fontWeight: 600 }}>{fmtRp(o.total)}</td>
+                <td className="mono" style={{ padding: "12px 18px", fontSize: 12, fontWeight: 600, color: "#10b981" }}>+{fmtRp(o.profit)}</td>
+                <td style={{ padding: "12px 18px" }}><Badge status={o.status} /></td>
+                <td style={{ padding: "12px 18px" }}>
+                  <div style={{ display: "flex", gap: 4 }}>
+                    {o.status === "pending" && (
+                      <>
+                        <button onClick={() => upOrd(o.id, "confirmed")} style={{ background: "#10b98115", color: "#10b981", border: "none", borderRadius: 6, padding: "4px 8px", cursor: "pointer", display: "flex" }}><Ic name="check" size={14} /></button>
+                        <button onClick={() => upOrd(o.id, "cancelled")} style={{ background: "#ef444415", color: "#ef4444", border: "none", borderRadius: 6, padding: "4px 8px", cursor: "pointer", display: "flex" }}><Ic name="x" size={14} /></button>
+                      </>
+                    )}
+                    {o.status === "confirmed" && (
+                      <button onClick={() => upOrd(o.id, "delivered")} style={{ background: "#6366f115", color: "#6366f1", border: "none", borderRadius: 6, padding: "4px 10px", cursor: "pointer", display: "flex", alignItems: "center", gap: 4, fontSize: 11, fontWeight: 600, fontFamily: "inherit" }}><Ic name="truck" size={14} /> Kirim</button>
+                    )}
+                  </div>
                 </td>
               </tr>
-            ) : (
-              filteredOrders.map((order, idx) => (
-                <tr
-                  key={order.id}
-                  style={{
-                    borderBottom: "1px solid var(--border)",
-                    transition: "background .12s",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.background =
-                      "var(--row-hover, rgba(0,0,0,0.03))")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.background = "transparent")
-                  }
-                >
-                  {/* # */}
-                  <td style={{ padding: "10px 14px", opacity: 0.5 }}>
-                    {idx + 1}
-                  </td>
-
-                  {/* Tanggal */}
-                  <td style={{ padding: "10px 14px", whiteSpace: "nowrap" }}>
-                    {fmtDate(order.date ?? order.createdAt)}
-                  </td>
-
-                  {/* Pelanggan */}
-                  <td style={{ padding: "10px 14px" }}>
-                    {order.customer ?? order.pelanggan ?? "-"}
-                  </td>
-
-                  {/* Produk */}
-                  <td style={{ padding: "10px 14px" }}>
-                    {order.product ?? order.produk ?? "-"}
-                  </td>
-
-                  {/* Qty */}
-                  <td style={{ padding: "10px 14px" }}>
-                    {order.qty ?? order.quantity ?? "-"}
-                  </td>
-
-                  {/* Total */}
-                  <td style={{ padding: "10px 14px", whiteSpace: "nowrap" }}>
-                    {fmtRp(order.total)}
-                  </td>
-
-                  {/* Profit */}
-                  <td style={{ padding: "10px 14px", whiteSpace: "nowrap" }}>
-                    {fmtRp(order.profit ?? 0)}
-                  </td>
-
-                  {/* Status */}
-                  <td style={{ padding: "10px 14px" }}>
-                    <Badge status={order.status} />
-                  </td>
-
-                  {/* Aksi */}
-                  <td style={{ padding: "10px 14px" }}>
-                    <div style={{ display: "flex", gap: 6 }}>
-                      {order.status === "pending" && (
-                        <>
-                          {/* Confirm */}
-                          <button
-                            title="Konfirmasi"
-                            onClick={() =>
-                              upOrd(order.id, { status: "confirmed" })
-                            }
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              width: 30,
-                              height: 30,
-                              borderRadius: 6,
-                              border: "1px solid #22c55e",
-                              background: "rgba(34,197,94,0.08)",
-                              color: "#22c55e",
-                              cursor: "pointer",
-                              transition: "background .12s",
-                            }}
-                            onMouseEnter={(e) =>
-                              (e.currentTarget.style.background =
-                                "rgba(34,197,94,0.18)")
-                            }
-                            onMouseLeave={(e) =>
-                              (e.currentTarget.style.background =
-                                "rgba(34,197,94,0.08)")
-                            }
-                          >
-                            <Ic name="check" size={14} />
-                          </button>
-
-                          {/* Cancel */}
-                          <button
-                            title="Batalkan"
-                            onClick={() =>
-                              upOrd(order.id, { status: "cancelled" })
-                            }
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              width: 30,
-                              height: 30,
-                              borderRadius: 6,
-                              border: "1px solid #ef4444",
-                              background: "rgba(239,68,68,0.08)",
-                              color: "#ef4444",
-                              cursor: "pointer",
-                              transition: "background .12s",
-                            }}
-                            onMouseEnter={(e) =>
-                              (e.currentTarget.style.background =
-                                "rgba(239,68,68,0.18)")
-                            }
-                            onMouseLeave={(e) =>
-                              (e.currentTarget.style.background =
-                                "rgba(239,68,68,0.08)")
-                            }
-                          >
-                            <Ic name="x" size={14} />
-                          </button>
-                        </>
-                      )}
-
-                      {order.status === "confirmed" && (
-                        /* Kirim */
-                        <button
-                          title="Kirim"
-                          onClick={() =>
-                            upOrd(order.id, { status: "shipped" })
-                          }
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 5,
-                            padding: "4px 10px",
-                            borderRadius: 6,
-                            border: "1px solid #3b82f6",
-                            background: "rgba(59,130,246,0.08)",
-                            color: "#3b82f6",
-                            cursor: "pointer",
-                            fontWeight: 600,
-                            fontSize: 12,
-                            transition: "background .12s",
-                          }}
-                          onMouseEnter={(e) =>
-                            (e.currentTarget.style.background =
-                              "rgba(59,130,246,0.18)")
-                          }
-                          onMouseLeave={(e) =>
-                            (e.currentTarget.style.background =
-                              "rgba(59,130,246,0.08)")
-                          }
-                        >
-                          <Ic name="truck" size={13} />
-                          Kirim
-                        </button>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+            ))}</tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
